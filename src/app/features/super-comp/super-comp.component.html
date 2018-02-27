@@ -1,0 +1,7 @@
+<p>
+  super-comp works!
+</p>
+<button (click)="addComp()" >Add More Comp</button>
+<app-child-comp *ngFor="let v of list">
+  {{v}}
+</app-child-comp>
