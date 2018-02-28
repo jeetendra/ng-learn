@@ -26,6 +26,7 @@ const projectRoot = "G:\\ng-practice\\jeet-rnd";
 
 
 const Jarvis = require("webpack-jarvis");
+const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
 const postcssPlugins = function () {
         // safe settings based on: https://github.com/ben-eb/cssnano/issues/358#issuecomment-283696193
@@ -80,6 +81,9 @@ const postcssPlugins = function () {
 
 module.exports = {
   "resolve": {
+    plugins: [
+      new TsConfigPathsPlugin()
+    ],
     "extensions": [
       ".ts",
       ".js"

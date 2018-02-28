@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule, Routes,  } from '@angular/router';
-
-import { FeaturesModule } from './features/features.module';
 import { AppComponent } from './app.component';
 
 import { EffectsModule } from '@ngrx/effects';
@@ -14,7 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
 import { routes } from './routes';
-
+import { FeaturesModule } from '@features/features/features.module';
 @NgModule({
   declarations: [
     AppComponent
