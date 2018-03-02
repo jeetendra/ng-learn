@@ -1,0 +1,10 @@
+<p>
+  Tabs
+</p>
+<ul>
+  <li *ngFor="let tab of tabs" >{{tab.name}} <span (click)="removeTab(tab)" >x</span>  </li>
+</ul>
+<input type="text" [(ngModel)]="name" />
+<input type="number" [(ngModel)]="age" />
+<button mat-raised-button color="primary" (click)="addTab()">Add tabs</button>
+

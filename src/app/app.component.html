@@ -1,13 +1,22 @@
 <div>
   <h3>Hello from Jeet</h3>
   <nav>
-    <a routerLink="/counter" routerLinkActive="active">Counter</a>
-    <a routerLink="/zone"  routerLinkActive="active" >Zone</a>
-    <a routerLink="/loop"  routerLinkActive="active" >Loop</a>
-    <a routerLink="/changedetection"  routerLinkActive="active" >Change Detection </a>
-
+    <a mat-button color="primary" routerLink="/counter" routerLinkActive="active">Counter</a>
+    <a mat-button color="primary" routerLink="/zone"  routerLinkActive="active" >Zone</a>
+    <a mat-button color="primary" routerLink="/loop"  routerLinkActive="active" >Loop</a>
+    <a mat-button color="primary" routerLink="/changedetection"  routerLinkActive="active" >Change Detection </a>
+    <a mat-button color="primary" routerLink="/tabs"  routerLinkActive="active" >Tabs </a>
+    <button mat-icon-button color="primary">
+      <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+    </button>
+    <mat-chip-list>
+        <mat-chip ><a color="primary" routerLink="/counter" routerLinkActive="active">Counter</a></mat-chip>
+        <mat-chip ><a color="primary" routerLink="/zone"  routerLinkActive="active" >Zone</a></mat-chip>
+        <mat-chip ><a color="primary" routerLink="/loop"  routerLinkActive="active" >Loop</a></mat-chip>
+        <mat-chip ><a color="primary" routerLink="/changedetection"  routerLinkActive="active" >Change Detection </a></mat-chip>
+        <mat-chip ><a color="primary" routerLink="/tabs"  routerLinkActive="active" >Tabs </a></mat-chip>
+    </mat-chip-list>
   </nav>
-
 
   <router-outlet></router-outlet>
 </div>

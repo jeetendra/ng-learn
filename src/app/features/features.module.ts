@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 import { SuperCompComponent } from './super-comp/super-comp.component';
 import { ChildCompComponent } from './child-comp/child-comp.component';
 import { HoverDirective } from './hover.directive';
@@ -14,11 +15,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { CounterEffect } from './counter/counter.effect';
 import { ZonesComponent } from './zones/zones.component';
 import { ChangeDetectionComponent } from './change-detection/change-detection.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
+    FormsModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forFeature([CounterEffect])
   ],
@@ -26,6 +30,6 @@ import { ChangeDetectionComponent } from './change-detection/change-detection.co
   providers: [
     StateService
   ],
-  declarations: [SuperCompComponent, ChildCompComponent, HoverDirective, CounterComponent, ZonesComponent, ChangeDetectionComponent]
+  declarations: [SuperCompComponent, ChildCompComponent, HoverDirective, CounterComponent, ZonesComponent, ChangeDetectionComponent, TabsComponent]
 })
 export class FeaturesModule { }
