@@ -2,6 +2,18 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 
+body {
+  background: #ccc;
+}
+
+.message-card {
+   width:400px;
+   margin-bottom: 6px;
+ }
+.message-card p {
+  margin-left: 20px;
+}
+
 .primary-color {
   color: #3F51B5!important;
 }

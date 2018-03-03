@@ -1,10 +1,21 @@
 <p>
   Tabs
 </p>
-<ul>
-  <li *ngFor="let tab of tabs" >{{tab.name}} <span (click)="removeTab(tab)" >x</span>  </li>
-</ul>
-<input type="text" [(ngModel)]="name" />
-<input type="number" [(ngModel)]="age" />
-<button mat-raised-button color="primary" (click)="addTab()">Add tabs</button>
+<mat-card class="message-card" *ngFor="let tab of tabs">
+  <mat-card-header>
 
+    <mat-card-title>{{tab.name}} - Developer</mat-card-title>
+    <!-- <mat-card-subtitle></mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{tab.message}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="removeTab(tab)">Delete</button>
+  </mat-card-actions>
+</mat-card>
+<input type="text" [(ngModel)]="message.name" />
+<input type="text" [(ngModel)]="message.message" />
+<button mat-raised-button color="primary" (click)="addTab()">Add tabs</button>

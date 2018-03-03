@@ -1,49 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
 
-export interface User {
-  name: string,
-  age: number
+export interface UserMessage {
+  name: string;
+  message: string;
 }
 
 @Component({
-  selector: 'app-tabs',
-  templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.css']
+  selector: "app-tabs",
+  templateUrl: "./tabs.component.html",
+  styleUrls: ["./tabs.component.css"]
 })
 export class TabsComponent implements OnInit {
-  tabs: Set<User>;
-  name:string = 'Hello';
-  age:number = 18;
-  private url:string = "http://localhost:4321";
-  constructor(private http: HttpClient) { }
+  tabs: Set<UserMessage>;
+  message: UserMessage = {
+    name: "Anon",
+    message: "Namaste"
+  };
 
-
-
+  private url = "http://localhost:4321/api/messages";
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-
-    const options = {
-      observe: "response", // to display the full response
-      responseType: "json"
-    };
-
-    this.http.get<User[]>(this.url,   )
-    .subscribe((data) => {
+    var response = this.http.get<UserMessage[]>(this.url);
+    console.log(response);
+    response.subscribe(data => {
       console.log(data);
       this.tabs = new Set(data);
-    })
+    });
   }
 
   addTab() {
-    if(!(this.name && this.age)) return;
-    this.tabs.add({name: this.name, age:this.age});
-    this.name = "";
-    this.age = 0;
+    if (!(this.message.name && this.message.message)) return;
+    
+    this.http.post(this.url, this.message).subscribe();
+    this.message.name = "";
+    this.message.message = '';
   }
 
-  removeTab(tab:User) {
+  removeTab(tab: UserMessage) {
     this.tabs.delete(tab);
   }
-
 }
