@@ -2,15 +2,15 @@
     <mat-toolbar color="primary">
         <mat-toolbar-row>
           <span>Hello from Jeet <mat-icon aria-label="heart icon">favorite</mat-icon></span>
-          <a mat-button  routerLink="/counter" routerLinkActive="active">Counter</a>
-          <a mat-button  routerLink="/zone"  routerLinkActive="active" >Zone</a>
+          <a mat-button routerLink="/counter" routerLinkActive="active">Counter</a>
+          <a mat-button routerLink="/zone"  routerLinkActive="active" >Zone</a>
           <a mat-button routerLink="/loop"  routerLinkActive="active" >Loop</a>
-          <a mat-button  routerLink="/changedetection"  routerLinkActive="active" >Change Detection </a>
-          <a mat-button  routerLink="/tabs"  routerLinkActive="active" >Tabs </a>
+          <a mat-button routerLink="/changedetection"  routerLinkActive="active" >Change Detection </a>
+          <a mat-button routerLink="/messages"  routerLinkActive="active" >Tabs </a>
           <a mat-button *ngIf="auth.isLoggedIn()" (click)="auth.logout()" >Logout</a>
         </mat-toolbar-row>        
         </mat-toolbar>
-  <app-login></app-login>
+  <app-login *ngIf="!auth.isLoggedIn()" ></app-login>
   <router-outlet></router-outlet>
 </div>
 

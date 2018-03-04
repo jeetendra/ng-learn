@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'; 
 import {MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,
@@ -64,8 +66,8 @@ const modules: any[] = [MatAutocompleteModule,
   MatStepperModule];
 
 @NgModule({
-  imports: [HttpClientModule, modules],
-  exports: [HttpClientModule, modules],
+  imports: [HttpClientModule, modules, RouterModule, FormsModule],
+  exports: [HttpClientModule, modules, RouterModule, FormsModule],
   declarations: []
 })
 export class SharedModule { }

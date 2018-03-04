@@ -13,6 +13,8 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
+    <a mat-button [routerLink]="['/messages', tab.id]" >Detail</a>
+
     <button mat-button (click)="removeTab(tab)">Delete</button>
   </mat-card-actions>
 </mat-card>

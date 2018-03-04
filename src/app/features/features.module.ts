@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
 import { SuperCompComponent } from './super-comp/super-comp.component';
 import { ChildCompComponent } from './child-comp/child-comp.component';
 import { HoverDirective } from './hover.directive';
@@ -22,7 +21,6 @@ import { TabsComponent } from './tabs/tabs.component';
   imports: [
     CommonModule,
     SharedModule,
-    FormsModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forFeature([CounterEffect])
   ],
