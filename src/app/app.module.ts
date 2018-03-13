@@ -18,12 +18,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { AuthModule } from './auth/auth.module';
 
+import { CoreModule } from './core/core.module';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     HttpClientModule,
+    CoreModule,
     AuthModule.forRoot(),
     BrowserModule, BrowserAnimationsModule,SharedModule, FormsModule, ReactiveFormsModule, FeaturesModule,
     RouterModule.forRoot(routes, { enableTracing: false }),

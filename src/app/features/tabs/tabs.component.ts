@@ -30,7 +30,7 @@ export class TabsComponent implements OnInit {
     this._activatedRoute.params.pipe(
       map( data => !!data.id ? '/' + data.id : '' ),
       switchMap(url => {
-        return this.http.get<UserMessage[]>(url)
+        return this.http.get<UserMessage[]>(this.url+url)
       })
     ).subscribe(data => {
       console.log(data);
